@@ -1,0 +1,31 @@
+﻿@model RutasCheck.Models.Concecionario
+
+@{
+    ViewData["Title"] = "Details";
+     ViewData["header-title-page"] = "Concecionarios/Propietarios";
+    ViewData["header-sub-title-page"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-inner mt--5">
+    <div class="card">
+        <div class="card-body">
+            <h3>Concecionario/Propietario</h3>
+
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+            </dl>
+            <div>
+                <a class="btn btn-sm btn-primary" asp-action="Index">Regresar</a>
+            </div>
+        </div>
+    </div>
+</div>
+

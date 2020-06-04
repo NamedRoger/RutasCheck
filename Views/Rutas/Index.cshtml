@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RutasCheck.Models.Ruta>
+
+@{
+    ViewData["Title"] = "Index";
+        ViewData["header-title-page"] = "Rutas";
+    ViewData["header-sub-title-page"] = "Listado de Rutas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-inner mt--5">
+    
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <a asp-action="Create" class="btn btn-sm btn-success">Agregar</a>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Nombre)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Color)
+                                    </th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Nombre)
+                                        </td>
+                                        <td>
+                                            <label class="colorinput">
+                                                <span class="colorinput-color" style="background-color:@item.Color;"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-sm btn-info" asp-action="Edit" asp-route-id="@item.IdRuta">Editar</a>
+                                            <a class="btn btn-sm btn-primary" asp-action="Details" asp-route-id="@item.IdRuta">Detalles</a>
+                                            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.IdRuta">Borrar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

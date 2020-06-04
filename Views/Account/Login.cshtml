@@ -1,0 +1,42 @@
+﻿@model RutasCheck.Models.ViewModels.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<div class="form-signin">
+    <div class="title">
+        <span class="main-title text-uppercase text-center">Needs Assessment App</span>
+        <p class="subtitle text-center">
+            <span class="by">By</span> ZIGLA
+        </p>
+    </div>
+
+    <form method="post" asp-action="Login">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="@Model.UserName"></label>
+            <input asp-for="@Model.UserName"
+                   class="form-control"
+                   placeholder="Nombre de Usuario"
+                   autofocus="autofocus" type="text" id="UserEmail">
+            <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Password"></label>
+            <input asp-for="@Model.Password"
+                   class="form-control"
+                   placeholder="Password" id="UserPassword">
+            <span asp-validation-for="@Model.Password" class="text-danger"></span>
+        </div>
+        <div class="form-group subform">
+            <label class="checkbox-inline" for="UserRememberMe">
+                <input type="checkbox" name="rememberMe" value="1" id="UserRememberMe">Remember me
+            </label>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Log in" class="btn-signin" />
+        </div>
+    </form>
+</div>

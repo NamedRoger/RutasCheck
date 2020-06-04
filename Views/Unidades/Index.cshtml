@@ -1,0 +1,68 @@
+﻿@model IEnumerable<RutasCheck.Models.Unidad>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["header-title-page"] = "Unidades";
+    ViewData["header-sub-title-page"] = "Listado de Unidades";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-inner mt--5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col"><a class="btn btn-sm btn-success" asp-action="Create">Agregar</a></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NumeroEconomico)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Placa)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.IdConcecionarioNavigation)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.IdPropietarioNavigation)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NumeroEconomico)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Placa)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdConcecionarioNavigation.Nombre)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdPropietarioNavigation.Nombre)
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-sm btn-info" asp-action="Edit" asp-route-id="@item.IdUnidad">Editar</a>
+                                            <a class="btn btn-sm btn-primary" asp-action="Details" asp-route-id="@item.IdUnidad">Detalles</a>
+                                            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.IdUnidad">Borrar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

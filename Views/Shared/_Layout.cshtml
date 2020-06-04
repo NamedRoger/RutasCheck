@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="_token" content=""/>
+    <title>@ViewData["Title"] - RutasCheck</title>
+
+    <script src="~/js/plugin/webfont/webfont.min.js"></script>
+
+    <script>
+        WebFont.load({
+            google: { "families": ["Lato:300,400,700,900"] },
+            custom: { "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../../css/fonts.min.css'] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/atlantis.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="wrapper">
+        @Html.AntiForgeryToken()
+        <header class="main-header">
+            <div class="logo-header" data-background-color="blue">
+
+                <a href="index.html" class="logo">
+                    <img src="../assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+                </a>
+                <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="icon-menu"></i>
+                    </span>
+                </button>
+                <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+                <div class="nav-toggle">
+                    <button class="btn btn-toggle toggle-sidebar">
+                        <i class="icon-menu"></i>
+                    </button>
+                </div>
+            </div>
+            <partial name="_Navbar" />
+        </header>
+
+        <partial name="_Sidebar" />
+
+        <main class="main-panel">
+            
+            <div class="content">
+                <vc:page-header title-page="@ViewData["header-title-page"]" sub-title-page="@ViewData["header-sub-title-page"]"></vc:page-header>
+                
+                @RenderBody()
+            </div>
+            <partial name="_Footer" />
+        </main>
+
+
+    </div>
+
+    <!--React-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <!--Axios-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!--Core js-->
+    <script src="~/js/core/jquery.3.2.1.min.js"></script>
+    <script src="~/js/core/popper.min.js"></script>
+    <script src="~/js/core/bootstrap.min.js"></script>
+
+    <!-- Jquery UI-->
+    <script src="~/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="~/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="~/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="~/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="~/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="~/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="~/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    <script src="~/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="~/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <script src="~/js/atlantis.min.js"></script>
+
+    <script type="module" src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

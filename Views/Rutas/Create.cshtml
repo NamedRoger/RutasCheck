@@ -1,0 +1,45 @@
+﻿@model RutasCheck.Models.Ruta
+
+@{
+    ViewData["Title"] = "Create";
+    ViewData["header-title-page"] = "Rutas";
+    ViewData["header-sub-title-page"] = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-inner mt--5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                     <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Nombre" class="control-label"></label>
+                            <input asp-for="Nombre" class="form-control" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Color" class="control-label"></label>
+                            <input type="color" asp-for="Color" class="colorinput-color" />
+                            <span asp-validation-for="Color" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <a class="btn btn-danger" asp-action="Index">Cancelar</a>
+
+                            <input type="submit" value="Guardar" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

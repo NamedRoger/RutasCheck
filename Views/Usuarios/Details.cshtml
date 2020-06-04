@@ -1,0 +1,48 @@
+﻿@model RutasCheck.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+    ViewData["header-title-page"] = "Usuarios";
+    ViewData["header-sub-title-page"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="page-inner mt--5">
+        <div class="card">
+            <div class="card-body">
+                <h4>Usuario</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.UserName)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Activo)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Activo)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.IdRutaNavigation)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.IdRutaNavigation.IdRuta)
+                    </dd>
+                </dl>
+                <div>
+                    <a class="btn btn-sm btn-primary" asp-action="Index">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+

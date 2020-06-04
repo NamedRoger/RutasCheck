@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RutasCheck.Models.Concecionario>
+
+@{
+    ViewData["Title"] = "Index";
+     ViewData["header-title-page"] = "Concecionarios/Propietarios";
+    ViewData["header-sub-title-page"] = "Un registro puede ser concecionario o propietario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-inner mt--5" >
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <div class="row mb-3">
+                        <div class="col">
+                            <a class="btn btn-sm btn-success" asp-action="Create">Agregar</a>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Nombre)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Nombre)
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-sm btn-info" asp-action="Edit" asp-route-id="@item.IdConcecionario">Editar</a>
+                                            <a class="btn btn-sm btn-primary" asp-action="Details" asp-route-id="@item.IdConcecionario">Detalles</a>
+                                            <a class="btn btn-sm btn-danger botonEliminarTabla" asp-action="Delete" asp-route-id="@item.IdConcecionario" >
+                                                Borrar
+                                            </a>
+                                            
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model RutasCheck.Models.Unidad
+
+@{
+    ViewData["Title"] = "Edit";
+     ViewData["header-title-page"] = "Unidades";
+    ViewData["header-sub-title-page"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="page-inner mt--5">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="Edit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="IdUnidad" />
+                            <div class="form-group">
+                                <label asp-for="IdConcecionario" class="control-label"></label>
+                                <select asp-for="IdConcecionario" class="form-control" asp-items="ViewBag.IdConcecionario"></select>
+                                <span asp-validation-for="IdConcecionario" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="NumeroEconomico" class="control-label"></label>
+                                <input asp-for="NumeroEconomico" class="form-control" />
+                                <span asp-validation-for="NumeroEconomico" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="IdPropiedatrio" class="control-label"></label>
+                                <select asp-for="IdPropiedatrio" class="form-control" asp-items="ViewBag.IdPropiedatrio"></select>
+                                <span asp-validation-for="IdPropiedatrio" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Placa" class="control-label"></label>
+                                <input asp-for="Placa" class="form-control  text-uppercase" />
+                                <span asp-validation-for="Placa" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <a class="btn btn-danger" asp-action="Index">Cancelar</a>
+
+                                <input type="submit" value="Guardar" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using RutasCheck.Helpers
+<!-- Sidebar -->
+<div class="sidebar sidebar-style-2">
+    <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content ">
+            <div class="user">
+                <div class="avatar-sm float-left mr-2">
+                    <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+                <div class="info">
+                    <a >
+                        <span>
+                            @User.Identity.Name
+                            <span class="user-level">ss</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <ul class="nav nav-primary">
+                <li class="nav-item ">
+                    <a href="#dashboard">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Components</h4>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="rutas" asp-action="index" >
+                        <i class="fas fa-route"></i>
+                        <p>Rutas</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a data-toggle="collapse" href="#UnidadesToggle">
+                        <i class="fas fa-bus-alt"></i>
+                        <p>Unidades</p>
+                        <span class="caret"></span>
+
+                    </a>
+                    <div class="collapse" id="UnidadesToggle">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a asp-controller="unidades" asp-action="index">
+                                    <span class="sub-item">Listado Unidades</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="concecionarios" asp-action="index">
+                                    <span class="sub-item">Concecionarios/Propietarios</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="usuarios" asp-action="index">
+                        <i class="fas fa-users"></i>
+                        <p>Usuarios</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="roles" asp-action="index">
+                        <i class="fas fa-user-tag"></i>
+                        <p>Roles</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Sidebar -->

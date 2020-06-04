@@ -1,0 +1,49 @@
+﻿@model RutasCheck.Models.Unidad
+
+@{
+    ViewData["Title"] = "Details";
+     ViewData["header-title-page"] = "Unidades";
+    ViewData["header-sub-title-page"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="page-inner mt--5">
+        <div class="card">
+            <div class="card-body">
+                <h3>Unidad</h3>
+
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.NumeroEconomico)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.NumeroEconomico)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Placa)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Placa)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.IdConcecionarioNavigation)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.IdConcecionarioNavigation.Nombre)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.IdPropietarioNavigation)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.IdPropietarioNavigation.Nombre)
+                    </dd>
+                </dl>
+                <div>
+                    <a class="btn btn-sm btn-primary" asp-action="Index">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
