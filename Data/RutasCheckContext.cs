@@ -24,6 +24,7 @@ namespace RutasCheck.Data
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<UsuarioHasRol> UsuariosHasRoles { get; set; }
         public virtual DbSet<Concecionario> Concecionarios { get; set; }
+        public virtual DbSet<Parada> Paradas {get;set;}
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -77,7 +78,7 @@ namespace RutasCheck.Data
 
             modelBuilder.Entity<ParadaDetalleRuta>(entity =>
             {
-                entity.HasKey(e => e.IdParada)
+                entity.HasKey(e => e.IdParadaDetalleRuta)
                     .HasName("PRIMARY");
 
                 entity.ToTable("paradas_detalles_ruta");
@@ -87,11 +88,6 @@ namespace RutasCheck.Data
 
                 entity.HasIndex(e => e.IdParadaOrigen)
                     .HasName("Id_Parada_Orgigen_idx");
-
-                entity.Property(e => e.Parada)
-                    .HasColumnType("varchar(120)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_general_ci");
 
                 entity.Property(e => e.TiempoEstimado).HasColumnType("time");
 
@@ -104,6 +100,10 @@ namespace RutasCheck.Data
                     .WithMany(p => p.InverseIdParadaOrigenNavigation)
                     .HasForeignKey(d => d.IdParadaOrigen)
                     .HasConstraintName("Id_Parada_Orgigen");
+
+                entity.HasOne(d => d.Parada)
+                .WithMany(p => p.ParadaDetallesRuta)
+                .HasForeignKey(d => d.IdParada);
             });
 
             modelBuilder.Entity<Recorrido>(entity =>
@@ -116,7 +116,7 @@ namespace RutasCheck.Data
                 entity.HasIndex(e => e.IdCarrera)
                     .HasName("Id_Carrera_FK_idx");
 
-                entity.HasIndex(e => e.IdParada)
+                entity.HasIndex(e => e.IdParadaDetalleRuta)
                     .HasName("Id_Parada_FK_idx");
 
                 entity.Property(e => e.Fecha).HasColumnType("datetime");
@@ -130,7 +130,7 @@ namespace RutasCheck.Data
 
                 entity.HasOne(d => d.IdParadaNavigation)
                     .WithMany(p => p.Recorridos)
-                    .HasForeignKey(d => d.IdParada)
+                    .HasForeignKey(d => d.IdParadaDetalleRuta)
                     .HasConstraintName("Id_Parada_FK");
             });
 

@@ -1,0 +1,32 @@
+@model RutasCheck.Models.Parada
+
+@{
+    ViewData["Title"] = "Details";
+    ViewData["header-title-page"] = "Paradas";
+    ViewData["header-sub-title-page"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-inner mt--5">
+    <div class="card">
+        <div class="card-body">
+            <div>
+                <h4>Parada</h4>
+                <hr />
+                <dl class="row">
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.NombreParada)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.NombreParada)
+                    </dd>
+                </dl>
+            </div>
+            <div>
+                <a asp-action="Index" class="btn btn-primary">Regresar</a>
+            </div>
+        </div>
+    </div>
+</div>
+

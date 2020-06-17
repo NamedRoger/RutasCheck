@@ -43,7 +43,7 @@ namespace RutasCheck.Helpers
         }
 
 
-        public async Task SigInAsyc(Controller controller, Usuario usuairo)
+        public async Task SigInAsyc(Controller controller, Usuario usuairo,bool isPersistentCoockie)
         {
             // usuario para buscar los roles
             var u = usuairo;
@@ -68,7 +68,12 @@ namespace RutasCheck.Helpers
             var claimIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var claimsPrincipal = new ClaimsPrincipal(claimIdentity);
 
-            await controller.HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+            await controller.HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, 
+            claimsPrincipal,
+            new AuthenticationProperties {
+                IsPersistent = isPersistentCoockie
+            }
+            );
 
 
         }
@@ -86,6 +91,25 @@ namespace RutasCheck.Helpers
             _context.Entry<Usuario>(user).State = EntityState.Modified;
 
             await _context.SaveChangesAsync();
+        }
+
+        public async Task AddRole (Usuario usuario, string rol) 
+        {
+            var role = await _context.Roles.FirstOrDefaultAsync(r => r.Nombre.ToUpper() == rol.ToUpper());
+            var usuarioRol = new UsuarioHasRol(){
+                IdRol = role.IdRol,
+                IdUsuario = usuario.IdUsuario
+            };
+        }
+
+        public async Task RemoveRole (Usuario usuario, string rol) 
+        {
+            var role = await _context.Roles.FirstOrDefaultAsync(r => r.Nombre.ToUpper() == rol.ToUpper());
+            var usuarioRol = await _context.UsuariosHasRoles.FirstOrDefaultAsync(hr => 
+            hr.IdUsuario == usuario.IdUsuario && hr.IdRol == role.IdRol
+            );
+
+            _context.UsuariosHasRoles.Remove(usuarioRol);
         }
 
 

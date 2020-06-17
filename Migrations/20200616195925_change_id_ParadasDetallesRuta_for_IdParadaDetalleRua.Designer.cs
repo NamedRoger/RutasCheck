@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RutasCheck.Data;
 
 namespace RutasCheck.Migrations
 {
     [DbContext(typeof(RutasCheckContext))]
-    partial class RutasCheckContextModelSnapshot : ModelSnapshot
+    [Migration("20200616195925_change_id_ParadasDetallesRuta_for_IdParadaDetalleRua")]
+    partial class change_id_ParadasDetallesRuta_for_IdParadaDetalleRua
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,26 +96,6 @@ namespace RutasCheck.Migrations
                     b.ToTable("detalles_ruta");
                 });
 
-            modelBuilder.Entity("RutasCheck.Models.Parada", b =>
-                {
-                    b.Property<int>("IdParada")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Borrado")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("NombreNormalizado")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("NombreParada")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("IdParada");
-
-                    b.ToTable("Paradas");
-                });
-
             modelBuilder.Entity("RutasCheck.Models.ParadaDetalleRuta", b =>
                 {
                     b.Property<long>("IdParadaDetalleRuta")
@@ -123,11 +105,13 @@ namespace RutasCheck.Migrations
                     b.Property<int>("IdDetalleRuta")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdParada")
-                        .HasColumnType("int");
-
                     b.Property<long?>("IdParadaOrigen")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("Parada")
+                        .HasColumnType("varchar(120)")
+                        .HasAnnotation("MySql:CharSet", "utf8")
+                        .HasAnnotation("MySql:Collation", "utf8_general_ci");
 
                     b.Property<TimeSpan>("TiempoEstimado")
                         .HasColumnType("time");
@@ -137,8 +121,6 @@ namespace RutasCheck.Migrations
 
                     b.HasIndex("IdDetalleRuta")
                         .HasName("Id_Detalle_Ruta_FK_idx");
-
-                    b.HasIndex("IdParada");
 
                     b.HasIndex("IdParadaOrigen")
                         .HasName("Id_Parada_Orgigen_idx");
@@ -404,12 +386,6 @@ namespace RutasCheck.Migrations
                         .WithMany("ParadaDetallesRuta")
                         .HasForeignKey("IdDetalleRuta")
                         .HasConstraintName("Id_Detalle_Ruta_FK")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("RutasCheck.Models.Parada", "Parada")
-                        .WithMany("ParadaDetallesRuta")
-                        .HasForeignKey("IdParada")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

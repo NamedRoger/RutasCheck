@@ -8,7 +8,7 @@ namespace RutasCheck.Models
     {
         [Key]
         public long IdRecorrido { get; set; }
-        public long? IdParada { get; set; }
+        public long? IdParadaDetalleRuta { get; set; }
         public long? IdCarrera { get; set; }
         public DateTime? Fecha { get; set; }
         public TimeSpan? HoraSalida { get; set; }

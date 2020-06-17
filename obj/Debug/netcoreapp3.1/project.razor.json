@@ -20708,6 +20708,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Roger\\source\\repos\\RutasCheck\\Views\\Paradas\\Index.cshtml",
+      "TargetPath": "Views\\Paradas\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Roger\\source\\repos\\RutasCheck\\Views\\Usuarios\\Create.cshtml",
       "TargetPath": "Views\\Usuarios\\Create.cshtml",
       "FileKind": "mvc"
@@ -20745,6 +20750,11 @@
     {
       "FilePath": "c:\\Users\\Roger\\source\\repos\\RutasCheck\\Views\\Rutas\\Delete.cshtml",
       "TargetPath": "Views\\Rutas\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Roger\\source\\repos\\RutasCheck\\Views\\Paradas\\Details.cshtml",
+      "TargetPath": "Views\\Paradas\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20808,6 +20818,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Roger\\source\\repos\\RutasCheck\\Views\\Paradas\\Edit.cshtml",
+      "TargetPath": "Views\\Paradas\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Roger\\source\\repos\\RutasCheck\\Views\\Unidades\\Delete.cshtml",
       "TargetPath": "Views\\Unidades\\Delete.cshtml",
       "FileKind": "mvc"
@@ -20833,8 +20848,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Roger\\source\\repos\\RutasCheck\\Views\\Paradas\\Create.cshtml",
+      "TargetPath": "Views\\Paradas\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Roger\\source\\repos\\RutasCheck\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Roger\\source\\repos\\RutasCheck\\Views\\Paradas\\Delete.cshtml",
+      "TargetPath": "Views\\Paradas\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {

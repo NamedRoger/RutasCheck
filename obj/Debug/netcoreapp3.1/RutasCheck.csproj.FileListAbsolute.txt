@@ -167,11 +167,6 @@ C:\Users\Roger\source\repos\RutasCheck\bin\Debug\netcoreapp3.1\runtimes\win-x86\
 C:\Users\Roger\source\repos\RutasCheck\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Roger\source\repos\RutasCheck\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Roger\source\repos\RutasCheck\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Create.cshtml.g.cs
-C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Delete.cshtml.g.cs
-C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Details.cshtml.g.cs
-C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Edit.cshtml.g.cs
-C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Index.cshtml.g.cs
 C:\Users\Roger\source\repos\RutasCheck\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
 C:\Users\Roger\source\repos\RutasCheck\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
 C:\Users\Roger\source\repos\RutasCheck\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
@@ -469,3 +464,13 @@ C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Roles
 C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Index.cshtml.g.cs
 C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Login.cshtml.g.cs
 C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Create.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Delete.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Details.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Edit.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Rutas\Index.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Paradas\Create.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Paradas\Delete.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Paradas\Details.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Paradas\Edit.cshtml.g.cs
+C:\Users\Roger\source\repos\RutasCheck\obj\Debug\netcoreapp3.1\Razor\Views\Paradas\Index.cshtml.g.cs

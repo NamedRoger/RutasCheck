@@ -12,9 +12,10 @@ namespace RutasCheck.Models
             Recorridos = new HashSet<Recorrido>();
         }
         [Key]
-        public long IdParada { get; set; }
+        public long IdParadaDetalleRuta { get; set; }
         public int IdDetalleRuta { get; set; }
-        public string Parada { get; set; }
+        public int IdParada {get;set;}
+        public Parada Parada { get; set; }
         public TimeSpan TiempoEstimado { get; set; }
         public long? IdParadaOrigen { get; set; }
 

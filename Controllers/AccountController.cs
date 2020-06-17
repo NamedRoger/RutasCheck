@@ -50,7 +50,7 @@ namespace RutasCheck.Controllers
 
             }
 
-            await _userHelper.SigInAsyc(this,findUser);
+            await _userHelper.SigInAsyc(this,findUser,login.Recordar);
 
             return RedirectToAction("Index","Home");
         }

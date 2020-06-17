@@ -11,8 +11,10 @@ namespace RutasCheck.Helpers
 {
     public interface IUserHelper
     {
+        Task AddRole(Usuario usuario, string rol);
         Usuario FindByUserName(string userName);
-        Task SigInAsyc(Controller controller, Usuario usuario);
+        Task RemoveRole(Usuario usuario, string rol);
+        Task SigInAsyc(Controller controller, Usuario usuario, bool isPersistentCoockie);
         Task Update(Usuario usuario);
 
     }
