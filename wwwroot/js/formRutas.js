@@ -1,6 +1,8 @@
 (() => {
     document.addEventListener('DOMContentLoaded', () => {
         let form = document.querySelector("#form-ruta");
+        let mapa = document.querySelector("#mapa-canva");
+
         let contentParadas = document.querySelector("#contentParadas");
         let btnAgregarParada = document.querySelector("#btn-agregar-parada");
 
@@ -97,10 +99,22 @@
             mostrarParadasRuta();
         }
 
+        // let crearMapa = () => {
+        //     const ctx = mapa.getContext('2d');
+        //     // Set line width
+        //     ctx.lineWidth = 5;
+
+        //     ctx.
+        // }
+
 
         mostrarParadasRuta();
         getParadas();
 
         btnAgregarParada.addEventListener("click",agregarParada);
+        form.addEventListener('submit',e => {
+            e.preventDefault();
+            fetch();
+        });
     });
 })();

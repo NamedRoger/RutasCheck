@@ -56,15 +56,9 @@ namespace RutasCheck.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdRuta,Nombre,Color")] Ruta ruta)
+        public async Task<IActionResult> Create([FromForm] )
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(ruta);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(ruta);
+           
         }
 
         // GET: Rutas/Edit/5

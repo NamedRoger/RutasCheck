@@ -13,17 +13,22 @@
             <div class="card">
                 <div class="card-body">
                      <form >
-                        <div class="form-group">
-                            <label for="">
-                                Paradas: 
-                                <span>
-                                    <button class="btn btn-sm btn-success" type="button" id="btn-agregar-parada">
-                                        Agregar
-                                    </button>
-                                </span>
-                            </label>
-                            <div id="contentParadas" class="d-flex flex-column">
-
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label for="">
+                                    Paradas: 
+                                    <span>
+                                        <button class="btn btn-sm btn-success" type="button" id="btn-agregar-parada">
+                                            Agregar
+                                        </button>
+                                    </span>
+                                </label>
+                                <div id="contentParadas" class="d-flex flex-column">
+    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <canvas id="mapa-canva"></canvas>
                             </div>
                         </div>
                         <div class="form-group">
